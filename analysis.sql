@@ -1,28 +1,24 @@
 -- =========================
 -- SALES SQL ANALYSIS PROJECT
 -- =========================
-
--- 1. Load Data (used during setup)
-COPY sales_raw
-FROM 'C:/Temp/sales_data.csv'
-DELIMITER ','
-CSV HEADER;
+-- Author: Srujana Mudunuru
+-- Description: SQL analysis of sales performance, profitability, and customer behavior
 
 -- =========================
--- 2. DATA VALIDATION
+-- 1. DATA VALIDATION
 -- =========================
 
--- Total records
+-- Total number of records
 SELECT COUNT(*) AS total_rows
 FROM sales_raw;
 
--- Preview data
+-- Preview first 10 rows
 SELECT *
 FROM sales_raw
 LIMIT 10;
 
 -- =========================
--- 3. MONTHLY SALES TREND
+-- 2. MONTHLY SALES TREND
 -- =========================
 
 SELECT 
@@ -33,7 +29,7 @@ GROUP BY month
 ORDER BY month;
 
 -- =========================
--- 4. REVENUE BY REGION
+-- 3. REVENUE BY REGION
 -- =========================
 
 SELECT 
@@ -44,7 +40,7 @@ GROUP BY region
 ORDER BY total_revenue DESC;
 
 -- =========================
--- 5. REVENUE BY PRODUCT CATEGORY
+-- 4. REVENUE BY PRODUCT CATEGORY
 -- =========================
 
 SELECT 
@@ -55,7 +51,7 @@ GROUP BY product_category
 ORDER BY total_revenue DESC;
 
 -- =========================
--- 6. PROFIT ANALYSIS
+-- 5. PROFIT ANALYSIS
 -- =========================
 
 SELECT 
@@ -69,7 +65,7 @@ GROUP BY product_category
 ORDER BY total_profit DESC;
 
 -- =========================
--- 7. CUSTOMER ANALYSIS
+-- 6. CUSTOMER ANALYSIS
 -- =========================
 
 SELECT 
@@ -80,7 +76,7 @@ GROUP BY customer_type
 ORDER BY total_revenue DESC;
 
 -- =========================
--- 8. SALES CHANNEL ANALYSIS
+-- 7. SALES CHANNEL ANALYSIS
 -- =========================
 
 SELECT 
